@@ -1,4 +1,5 @@
 AngularRails::Application.routes.draw do
+  get "taco_order/edit"
   get "hello_angular/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
