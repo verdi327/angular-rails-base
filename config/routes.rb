@@ -1,4 +1,6 @@
 AngularRails::Application.routes.draw do
+  resources :books
+
   get "git_http/show"
   get "taco_order/edit"
   get "hello_angular/show"
