@@ -1,4 +1,5 @@
 AngularRails::Application.routes.draw do
+  get "git_http/show"
   get "taco_order/edit"
   get "hello_angular/show"
   # The priority is based upon order of creation: first created -> highest priority.
