@@ -1,6 +1,6 @@
 <div ng-app="AngulaRails"
  ng-controller="BooksController"
- ng-init="urls=<%= @urls.to_json %>;books=<%=@books_json.to_json%>">
+ ng-init="getBooks()">
   <div class="row">
     <div class="col-md-6">
       <h2>{{formHeader}}</h2>

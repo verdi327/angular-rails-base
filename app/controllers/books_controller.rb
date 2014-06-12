@@ -12,12 +12,16 @@ class BooksController < ApplicationController
           books: books_path
         }
       }
-      format.json { render json: @books }
+      format.json { render json: @books, root: false, each_serializer: BookSerializer }
     end
   end
 
   # GET /books/1
   def show
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @book, root: false }
+    end
   end
 
   # GET /books/new
