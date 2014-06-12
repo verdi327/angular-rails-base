@@ -3,9 +3,30 @@
  ng-init="urls=<%= @urls.to_json %>;books=<%=@books_json.to_json%>">
   <div class="row">
     <div class="col-md-6">
+      <h2>{{formHeader}}</h2>
+      <form ng-submit="save()">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="book.title" />
+        </div>
+        <div class="form-group">
+          <label>Author</label>
+          <input type="text" class="form-control" ng-model="book.author" />
+        </div>
+        <button class="btn btn-primary">
+          Save
+        </button>
+      </form>
+
       <h1>Books</h1>
       <ul>
         <li ng-repeat="book in books">
+          <div class="btn btn-default" ng-click="edit(book, $index)">
+            <%= fa_icon "pencil" %>
+          </div>
+          <div class="btn btn-default" ng-click="delete(book, $index)">
+            <%= fa_icon "trash-o" %>
+          </div>
           {{ book.title }} by {{ book.author }}
         </li>
       </ul>
