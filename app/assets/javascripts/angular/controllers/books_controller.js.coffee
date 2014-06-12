@@ -1,10 +1,10 @@
-AngulaRails.controller "BooksController", ($scope, $http) ->
+AngulaRails.controller "BooksController", ($scope, $http, Book) ->
   $scope.formHeader = "Add a New Book"
 
   $scope.getBooks = () ->
-    $http({method: "GET", url: $scope.urls.books})
-      .success (response) ->
-        $scope.books = response
+    Book.getBooksWithPromises()
+      .then (books) ->
+        $scope.books = books
 
   $scope.save = () ->
     if $scope.book.id?
