@@ -1,4 +1,6 @@
 AngularRails::Application.routes.draw do
+  resources :games
+
   resources :books
 
   get "git_http/show"
